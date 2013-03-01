@@ -37,7 +37,7 @@ module.exports = function(grunt) {
       var src = banner + f.src.filter(function(filepath) {
         // Warn on and remove invalid source files (if nonull was set).
         if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
+          grunt.log.warn('Source file ' + filepath.grey + ' not found.');
           return false;
         } else {
           return true;
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
       grunt.file.write(f.dest, src);
 
       // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" created.');
+      grunt.log.writeln('File ' + f.dest.cyan + ' created.');
     });
   });
 
